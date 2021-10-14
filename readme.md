@@ -40,9 +40,9 @@ use `run.bat` or `./run.sh` to run UI<br>
 
 ## TODO 
 - [x] Corriger Extends
-- [ ] Problemen Extends father interface
+- [ ] Problemen Extends/Iplement name -> .* name.*
 - [x] corriger Abstract FUnc
 - [ ] corriger open GUI linux : /usr/bin/thunar ~
 - [x] import *****
 - [ ] Create UML
-- [ ] Create Test
+- [ ] Load UML
