@@ -36,7 +36,7 @@ Run
 
 use `run.bat` or `./run.sh` to run UI<br>
 /!\ if you have install python3 in windows path with the name `python3`, you needs to change run.bat with python3
-> Main while check update en downloads New file if needs !
+> Main while check update and downloads New file if needs !
 
 ## TODO 
 - [x] Corriger Extends
