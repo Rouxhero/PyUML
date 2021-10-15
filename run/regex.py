@@ -84,7 +84,6 @@ def runRegex(arg):
         text = test.readline()
     print('Getting all data : Done')
     arg["output"].set("generating pacakge")
-    print(implementListe)
     joinData = {"extends": extendsListe, "implements": implementListe}
     packageFinal = []
     print('Generating package : ')
@@ -94,9 +93,9 @@ def runRegex(arg):
         print("-"*20)
         for classF in packageData[package]:
             # packageFinal[package].append()
-            print('\t\t'+classF)
-            print(packageData[package][classF])
             thePack.addClass(ClassObject(classF, packageData[package][classF]))
+            print('\t\t'+classF)
+            print(tab,packageData[package][classF])
             
         packageFinal.append(thePack)
         print("-"*20)

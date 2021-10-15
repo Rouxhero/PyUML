@@ -5,8 +5,8 @@ from interface.entry import *
 from regex import *
 from interface.uml import *
 from interface.function import *
+from interface.data import *
 import re
-
 
 class CodePage(tk.Frame):
     def __init__(self, parent, controller):

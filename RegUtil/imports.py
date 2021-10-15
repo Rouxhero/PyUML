@@ -11,29 +11,26 @@ class Import :
 
 
 	def __genImport(self):
+		print("generating Import : ",end="")
 		allClassName = {}
 		for pack in self.data:
 			for clas in pack.classData:
 				allClassName[(clas.flag['name'])] = [clas.types,clas,pack.name]
-		print(allClassName.keys())
+
 		txt = ""
 		for tpe in allClassName:
 			tpEE = allClassName[tpe]
 			txt = ""
 			for tps in tpEE[0]:
 				tps = cleanTT(tps)
-				print(tps)
 				tps = tps.split('<')
-				print(tps)
 				tpss = tps
 				tps = []
 				for tt in tpss:
 					allD = tt.split(',')
 					for al in allD:
 						tps.append(al)
-				print(tps)
 				for tt in tps :
-					print(tt)
 					tt = tt.split('>')[0]
 					if tt in importVal :
 						txt += importVal[tt]+line
@@ -42,5 +39,6 @@ class Import :
 							target = allClassName[tt][2]
 							txt += "import {}.{} ;".format(target,tt)+line
 			tpEE[1].imports = txt
+		print('Done')
 
  

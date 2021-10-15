@@ -23,9 +23,10 @@ class ClassObject:
         self.func = []
         self.imports = ""
         self.__configClass()
+        print("\t==== {} ====".format( self.flag["type"]))
         self.__configVariable()
         self.__configFunction()
-        print(self.types)
+        
 
     def __configClass(self):
         # print(tab*3+'Config name')

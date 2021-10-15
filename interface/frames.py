@@ -5,6 +5,8 @@ from interface.entry import *
 from regex import *
 from interface.uml import *
 from interface.code import *
+from interface.data import *
+from run.regex import *
 import re
 from interface.function import *
 
@@ -272,7 +274,7 @@ class MainPage(tk.Frame):
     def work(self):
         etat = True
         for key in self.var:
-            if self.var[key].get() == defauldName[key]:
+            if self.var[key].get() == defauldName[key] and defauld:
                 etat = False
                 self.status["msg"].set("ImportError")
         if etat:
@@ -296,6 +298,7 @@ class MainPage(tk.Frame):
             self.status["status"].set("Running")
             try:
                 runRegex(arg)
+                self.__save()
             except Exception as e:
                 print(e)
                 self.status["msg"].set(e)
@@ -310,6 +313,12 @@ class MainPage(tk.Frame):
         else:
             self.status["status"].set("Error")
             self.fields['status'].config(bg="red")
-
+    def __save(self):
+        with open("./interface/frameData.py",'w') as file :
+            txt = "#Waring AutoWrite Fill do not change \n\nframe = {\n"
+            for key in self.var:
+                txt+="\t\""+key+"\" : \""+self.var[key].get()+"\",\n"
+            txt+="}\n\nisDef = False"
+            file.write(txt)
 
 FramesList = (MainPage,UmlPage,CodePage)

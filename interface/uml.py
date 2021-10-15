@@ -4,6 +4,7 @@ from tkinter.filedialog import *
 from interface.entry import *
 from regex import *
 from RegUtil.data import *
+from interface.data import *
 import re
 
 
