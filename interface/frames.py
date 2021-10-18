@@ -2,7 +2,6 @@ import tkinter as tk
 import tkinter.ttk as tkk
 from tkinter.filedialog import *
 from interface.entry import *
-from regex import *
 from interface.uml import *
 from interface.code import *
 from interface.data import *
