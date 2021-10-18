@@ -1,9 +1,9 @@
 #Waring AutoWrite Fill do not change 
 
 frame = {
-	"path" : "/home/leo/Bureau",
-	"Project Name" : "Test",
-	"Floder Name" : "Test",
+	"path" : "/home/leo/Bureau/PyUML/testHere",
+	"Project Name" : "test2",
+	"Floder Name" : "shipmen",
 	"wsd file" : "/home/leo/Bureau/S5/COO/TD3Diagramme.wsd",
 }
 

@@ -57,6 +57,7 @@ def runRegex(arg):
     extendsListe = []
     print('Reading File : Done')
     while text:
+        print(text)
         if re.match(packageR, text):
             pack = cleantext(text)
             pack = pack.split(space)[1]
@@ -96,6 +97,7 @@ def runRegex(arg):
             thePack.addClass(ClassObject(classF, packageData[package][classF]))
             print('\t\t'+classF)
             print(tab,packageData[package][classF])
+            print(thePack.classData[-1].flag)
             
         packageFinal.append(thePack)
         print("-"*20)
@@ -103,8 +105,11 @@ def runRegex(arg):
 
     arg["output"].set("Writing")
     aa = Import(packageFinal)
+    # print(joinData)
     for package in packageFinal:
         package.joint(joinData)
+        # for cla in package.classData :
+        #     print(cla.flag)
         package.write(arg["fatherRep"], arg["projectName"], path)
 
 

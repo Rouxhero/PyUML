@@ -24,8 +24,8 @@ def cleanTT(text):
 endClass = r"}\n"
 Var = r"^\t*(\+|#|-)\s?(static)?\s?(final)?\s?[A-Za-z0-9_<>,\[\]]*\s[A-Za-z0-9_]+\n?$"
 Func = r"^\t*(\+|#|-)\s?(\{abstract\})?\s?(static)?\s?([A-Za-z0-9_<>,]+)?\s[A-Za-z0-9_]+\([A-Za-z0-9_<>, ]*\)(:[A-Za-z0-9_<>,]+)?"
-extends = r"^\t*([A-Za-z0-9]+)\s?(<\|--|--\|>)\s?([A-Za-z0-9]+)\n?"
-implement = r"^\t*([A-Za-z0-9]+)\s?(\*--|--\*)\s?([A-Za-z0-9]+)\n?"
+extends = r"^\t*([A-Za-z0-9]+)\s?(<\|(-)+|(-)+\|>)\s?([A-Za-z0-9]+)\n?"
+implement = r"^\t*([A-Za-z0-9]+)\s?(\*\.+|\.+\*)\s?([A-Za-z0-9]+)\n?"
 className = r"^\t*((abstract\s+)|(protected\s+))?(class|enum|interface)\s+([A-Z][a-zA-Z_]*)(\s+(extends|implement)\s+([A-Z][a-zA-Z_]*))?(\s|\S)+?"
 packageR = r"^\t*package\s([a-zA-Z_])+\s?\{"
 funcParam = r'\([\w,\s<>_]*\)'
@@ -53,7 +53,7 @@ importVal = {
     "Map":maps,
     "HashMap":maps,
     "Random":"import java.util.Random;"
-}
+}   
 
 
 def cleantext(text):
@@ -63,12 +63,13 @@ def cleantext(text):
 
 
 def cleanI(text):
-    text = re.sub(r"<\|--", "<", text)
-    text = re.sub(r"--\|>", ">", text)
+    print("Implement",text)
+    text = re.sub(r"\*\.+", "<", text)
+    text = re.sub(r"\.+\*", ">", text)
     return cleantext(text)
 
-
 def cleanE(text):
-    text = re.sub(r"\*--", "<", text)
-    text = re.sub(r"--\*", ">", text)
+    print("Extend", text)
+    text = re.sub(r"<\|(-)+", "<", text)
+    text = re.sub(r"(-)+\|>", ">", text)
     return cleantext(text)

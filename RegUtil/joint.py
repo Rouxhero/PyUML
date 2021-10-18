@@ -7,7 +7,6 @@ class Join:
     def __init__(self, classData: list, jointData: dict):
         self.classData = classData
         self.jointData = jointData
-
         self.__createJoint()
 
     def __createJoint(self):
@@ -17,23 +16,20 @@ class Join:
                     self.__createJointLeft(">",join, key)
                 elif "<" in join:
                     self.__createJointRight("<",join, key)
-                elif "--*" in join:
-                    self.__createJointLeft("-*",join, key)
-                elif "*--" in join:
-                    self.__createJointRight("*-",join, key)
 
     def __createJointRight(self, sep:str, join: str, key: str):
         parts = join.split(sep)
         father = parts[0]
-        son = parts[1]
+        son = re.sub(" ", "", parts[1])
         for classO in self.classData:
-            if classO.flag["name"] in son:
+            
+            if classO.flag["name"] ==  son :
                 classO.flag[key] = key + space + father
 
     def __createJointLeft(self, sep:str, join: str, key: str):
         parts = join.split(sep)
         father = parts[1]
-        son = parts[0]
+        son = re.sub(" ", "", parts[0])
         for classO in self.classData:
-            if classO.flag["name"] in son:
+            if classO.flag["name"] ==  son :
                 classO.flag[key] = key + space + father

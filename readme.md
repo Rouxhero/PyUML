@@ -27,7 +27,7 @@ WSD synthaxe
 	}
 
 	<class1><|--<class2>
-	<class1>*--<class3>
+	<class1>*..<class3>
 }
 
 ```
@@ -40,7 +40,7 @@ use `run.bat` or `./run.sh` to run UI<br>
 
 ## TODO 
 - [x] Corriger Extends
-- [ ] Problemen Extends/Iplement name -> .* name.*
+- [X] Problemen Extends/Implement name -> .* name.*
 - [x] corriger Abstract FUnc
 - [ ] corriger open GUI linux : /usr/bin/thunar ~
 - [x] import *****

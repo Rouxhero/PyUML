@@ -14,7 +14,7 @@ abstract class Match{
 class MatchAlea{
 	
 }
-Match *-- MatchAlea
+Match *.. MatchAlea
 }
 
 
