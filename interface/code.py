@@ -40,6 +40,8 @@ class CodePage(tk.Frame):
         tk.Button(self, textvariable=self.varImprot , command=self.changeType).grid(
             row=0, column=0 ,sticky="e"
         )
+
+
     def __showImport(self):           
         self.varAsk = tk.LabelFrame(
             self, text="Configure Import", borderwidth=2, relief=GROOVE
@@ -47,54 +49,72 @@ class CodePage(tk.Frame):
         pos = 0
         if self.statuImport :
             for key in self.MultiFileflag:
-                # Variable Text
-                self.var[key] = tk.StringVar()
-                self.var[key].set(defauldName[key])
-
                 # Show First Text
                 tk.Label(self.varAsk, text="{} :".format(key)).grid(
                     row=pos, column=0, sticky="nsew"
                     )
-                self.output_label = tk.Label(
-                    self.varAsk,
-                    textvariable=self.var[key],
-                    width=50,
-                    bg="white",
-                    borderwidth=2,
-                    relief=GROOVE,
-                    )
-                self.output_label.grid(column=1,columnspan=2 ,row=pos)
-                tk.Button(self.varAsk, text="...", command=self.func[key]).grid(
-                    row=pos, column=4 ,sticky="e"
-                    )
-                pos+=1;
+                if key != "Project Path":
+                    self.var[key] = tk.IntVar()
+                    tk.Checkbutton(
+                        self.varAsk,
+                        variable=self.var[key],
+                        onvalue=1,
+                        offvalue=0,
+                    ).grid(row=pos, column=1 , sticky="e")
+                else :
+                    # Variable Text
+                    self.var[key] = tk.StringVar()
+                    self.var[key].set(defauldName[key])
+
+                    self.output_label = tk.Label(
+                        self.varAsk,
+                        textvariable=self.var[key],
+                        width=50,
+                        bg="white",
+                        borderwidth=2,
+                        relief=GROOVE,
+                        )
+                    self.output_label.grid(column=1,columnspan=2 ,row=pos)
+                    tk.Button(self.varAsk, text="...", command=self.func[key]).grid(
+                        row=pos, column=4 ,sticky="e"
+                        )
+                pos+=1
         else :
             for key in self.OneFileflag:
-                # Variable Text
-                self.var[key] = tk.StringVar()
-                self.var[key].set(defauldName[key])
-
                 # Show First Text
                 tk.Label(self.varAsk, text="{} :".format(key)).grid(
                     row=pos, column=0, sticky="nsew"
                     )
-                self.output_label = tk.Label(
-                    self.varAsk,
-                    textvariable=self.var[key],
-                    width=50,
-                    bg="white",
-                    borderwidth=2,
-                    relief=GROOVE,
-                    )
-                self.output_label.grid(column=1,columnspan=2 ,row=pos)
-                tk.Button(self.varAsk, text="...", command=self.func[key]).grid(
-                    row=pos, column=4 ,sticky="e"
-                    )
-                pos+=1;
-            self.varAsk.grid(column=0,row=1)
+                if key != "File Path":
+                    self.var[key] = tk.IntVar()
+                    tk.Checkbutton(
+                        self.varAsk,
+                        variable=self.var[key],
+                        onvalue=1,
+                        offvalue=0,
+                    ).grid(row=pos, column=1 , sticky="e")
+                else :
+                    # Variable Text
+                    self.var[key] = tk.StringVar()
+                    self.var[key].set(defauldName[key])
+
+                    self.output_label = tk.Label(
+                        self.varAsk,
+                        textvariable=self.var[key],
+                        width=50,
+                        bg="white",
+                        borderwidth=2,
+                        relief=GROOVE,
+                        )
+                    self.output_label.grid(column=1,columnspan=2 ,row=pos)
+                    tk.Button(self.varAsk, text="...", command=self.func[key]).grid(
+                        row=pos, column=4 ,sticky="e"
+                        )
+                pos+=1
+        self.varAsk.grid(column=0,row=1)
 
     def changePath(self):
-        self.var["path"].set(selecPath())
+        self.var["Project Path"].set(selecPath())
     
     def changePack(self):
         pass
@@ -103,7 +123,7 @@ class CodePage(tk.Frame):
         pass
     
     def changeFile(self):
-        self.var["path"].set(selectFileJava())
+        self.var["File Path"].set(selectFileJava())
 
     def changeType(self):
         self.statuImport =  not self.statuImport

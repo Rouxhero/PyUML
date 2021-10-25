@@ -4,7 +4,7 @@ frame = {
 	"path" : "/home/leo/Bureau/PyUML/testHere",
 	"Project Name" : "test2",
 	"Floder Name" : "shipmen",
-	"wsd file" : "/home/leo/Bureau/S5/COO/TD3Diagramme.wsd",
+	"wsd file" : "/home/leo/Bureau/PyUML/data/Exemple.wsd",
 }
 
 isDef = False
