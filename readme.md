@@ -5,7 +5,7 @@
 
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Rouxhero/PyUML?style=flat-square)
-[![GitHub all releases](https://img.shields.io/github/downloads/Rouxhero/PyUML/total)](https://github.com/Rouxhero/PyUML/archive/refs/heads/master.zip)
+[![GitHub all releases](https://img.shields.io/github/downloads/Rouxhero/PyUML/total)](https://github.com/Rouxhero/PyUML/archive/refs/tags/V1.zip)
 # How to use !
 
 WSD synthaxe
