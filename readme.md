@@ -1,51 +1,54 @@
+<p align="center">
+    <img src="https://see.fontimg.com/api/renderfont4/1G5ve/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjNDM1MzVBIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/UHlVTUw/chevadisplay-regular.png" alt="Sans Serif fonts">
+</p>
 
-## Goal of the extension
-<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Rouxhero/Py_Uml/CI/main">
----
+<p align="center">
+ <img src="https://img.shields.io/github/workflow/status/Rouxhero/Py_Uml/CI/main"/>
+ <img src="https://img.shields.io/github/languages/code-size/Rouxhero/PyUML"/>
+ <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Rouxhero/PyUML">
+</p>
 
-This extension can generate and preview the UML of a portion of code or a file or a directory
+----
+# Author
 
-## Features
+- [Rouxhero](https://github.com/Rouxhero)
+- [Skyzo](https://github.com/Skyzae)
 
----
+----
 
-I) Generation of a portion of code with a file open in the vscode window.
+# Extension's Goal
 
-Two steps:
+This extension is created for the generation of UML class diagram of a code.
+Using a kernel who read the source and create a code. This code should be used by different module who while create UML.
 
-- Selecting the portion of code you want to generate the UML 
+-----
+# Features
 
-- Right-click and select `Code To UML: Code to UML` : 
+## Kernel
 
-When finished, the UML will automatically open to the side.
+This first version contains a kernel in Python Language, but later it's should be update en C++ , which it's more efficient for heavy project.
 
-II) Generation of all the code in a file open in the vscode window.
+**Supported Language :**
 
-One step:
+- [X] Java
 
-- Right-click and select `Code To UML: File to UML` : 
+## UML
 
-When finished, the UML will automatically open to the side.
+This first version of UML use JointJS for the visualization, in future versions, we will add more features on the visualization, like select two or more class in the same time
 
-III) Generation of a java file in the file explorer in the vscode window.
+**Current features :**
 
-One step:
+- [X] Move and drag all class
+- [X] Remove a class 
+- [X] Remove all association links
+- [X] Create a layout (not accurate)
 
-- Right-click on the file you want to generate the UML in the file explorer and select `Code To UML: Java File to UML` : 
 
-When finished, the UML will automatically open to the side.
+----
+# Release Notes
 
-IV) Generation of a directory in the file explorer in the vscode window.
 
-One step:
-
-- Right-click on the directory you want to generate the UML in the file explorer and select `Code To UML: Folder to UML` : 
-
-When finished, the UML will automatically open to the side.
-
-## Release Notes
----
-### 1.0.0
+## 1.0.0
 Initial release of PyUml with the generation of java files or java files directory.
 
-**Enjoy!**
+*Enjoy!*
