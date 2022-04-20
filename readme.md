@@ -5,7 +5,7 @@
 <p align="center">
  <img src="https://img.shields.io/github/workflow/status/Rouxhero/Py_Uml/CI/main"/>
  <img src="https://img.shields.io/github/languages/code-size/Rouxhero/PyUML"/>
- <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Rouxhero/PyUML">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Rouxhero/PyUML">
 </p>
 
 ----
