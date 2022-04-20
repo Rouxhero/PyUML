@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png">
+    <title>PyUML docs</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="../img/logo.png" />
+        <h1>PyUML documentation</h1>
+    </div>
+    <div id="index">
+        <h2>Index</h2>
+        <a href="../index.html">- Accueil</a>
+        <a href="./extention.html"> - Fonctionnement de L'extension VScode</a>
+        <a href="./js.html"> - La partie JavaScript</a>
+        <ul>
+            <li>
+                <a href="./js.html#JointJS">JointJS</a>
+            </li>
+            <li>
+                <a href="./js.html#Complement">Notre Complement</a>
+            </li>
+
+        </ul>
+        <a href="./python.html">- La partie Python</a>
+        <ul>
+            <li>
+                <a href="./python.html#global">Fonctionnement global</a>
+            </li>
+            <li>
+                <a href="./python.html#Java">Le Language Python</a>
+            </li>
+            <li>
+                <a href="./demo2.html">UML</a>
+            </li>
+        </ul>
+        <a href="./test.html">- Test</a>
+        <a href="./demo.html">- Demo</a>
+        <a href="./about.html">- A propos</a>
+    </div>
+    <div id="Contener">
+        <h1>Pourquoi une extension ?</h1>
+        <p>
+            L'extension a été créé afin d'améliorer certains points problématiques qui étaient présents sur notre IDE. En effet, en plus d'une interface plus optimisée, l'extension est disponible partout, sur l'IDE VSCode (une IDE très populaire dans le domaine du
+            développement). On gagne en rapidité d'exécution, notamment afin un click (voir un raccourci), votre code orienté objet, en Java et en Python, est généré en UML Diagram Class permettant un visuel simple, interactif et coloré.
+        </p>
+        <h1>
+            Comment fonctionne-t'elle ?
+        </h1>
+        <p>
+            Nous allons observer le fonctionnement de l'extension au niveau de VSCode. L'intégralité du code est stockée dans le fichier
+            <a href="../../vscode_extension_PyUML/src/extension.js" target="_blank">[extension.js]
+            </a> L'image suivante nous montre le fonctionnement global de l'extension.
+        </p>
+        <img src="../img/app.png" style="width: 60%;" />
+        <p>
+            L'extension est basée sur deux fichiers impératifs à son fonctionnement :
+            <ul>
+                <li>
+                    - "extension.js" qui permet de gérer les commandes créées dans "package.json" en y créant les fonctions associées ainsi que leurs rôles.
+                </li>
+                <li>
+                    - "package.json" qui est le répertoire des commandes présentes dans l'extension, ainsi que les différentes manières/conditions et emplacement où elles s'exécutent.
+                </li>
+            </ul>
+            <p>
+                Elle est rejoint par le <a href="./python.html" target="_blank">[main.py]</a> qui permet de gérer le fonctionnement de l'extension car il est situé entre la réception du code et/ou des paths des fichiers et la génération de l'UML dans
+                "umlcd.js".
+            </p>
+        </p>
+        <p>
+            Notre "extension.js" est séparé en différents groupes de fonctions:
+            <ul>
+                <li>
+                    - "*...toUML" qui permettent de récupérer les codes et/ou les paths des fichiers/dossiers afin de générer l'UML via un script python.
+                </li>
+                <li>
+                    - Les fonctions concernant l'affichage de la page et de l'UML généré avec le code HTML et la gestion des imports (ex: umlcd.js) et la gestion des différentes previews disponibles.
+                </li>
+                <li>
+                    - "request" qui est une fonction qui se situe entre le code reçu provenant de la fenêtre VSCode et la génération de l'UML associé.
+                </li>
+            </ul>
+        </p>
+    </div>
+</body>
+
+</html>

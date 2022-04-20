@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png">
+    <title>PyUML docs</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="../img/logo.png" />
+        <h1>PyUML documentation</h1>
+    </div>
+    <div id="index">
+        <h2>Index</h2>
+        <a href="../index.html">- Accueil</a>
+        <a href="./extention.html"> - Fonctionnement de L'extension VScode</a>
+        <a href="./js.html"> - La partie JavaScript</a>
+        <ul>
+            <li>
+                <a href="./js.html#JointJS">JointJS</a>
+            </li>
+            <li>
+                <a href="./js.html#Complement">Notre Complement</a>
+            </li>
+
+        </ul>
+        <a href="./python.html">- La partie Python</a>
+        <ul>
+            <li>
+                <a href="./python.html#global">Fonctionnement global</a>
+            </li>
+            <li>
+                <a href="./python.html#Java">Le Language Python</a>
+            </li>
+            <li>
+                <a href="./demo2.html">UML</a>
+            </li>
+        </ul>
+        <a href="./test.html">- Test</a>
+        <a href="./demo.html">- Demo</a>
+        <a href="./about.html">- A propos</a>
+    </div>
+    <div id="Contener">
+        <h1>Test</h1>
+        <p>
+            Cette page est dediée aux tests de notre extention. Il y a deux types de tests , les tests unitaires, et les tests terrains.
+        </p>
+        <h4>Sommaire</h4>
+        <ul>
+            <li>Tests Unitaires</li>
+            <li>Tests terrains</li>
+        </ul>
+
+        <h4>Testes unitaires</h4>
+        <p>
+            Les tests unitaires sont dans le dossier <a href="../../vscode_extension_PyUML/languages/java/object/" target="_blank">java/object</a>. Ils permettent de tester le bon fonctionnement des composantes du langage Java.
+        </p>
+        <p>
+            Les tests sont codés dans les fonctions main de chaque fichier, ils lancent la generation sur une portion de code, et verifient que le retour de la classe a tester est correct. Ces tests servent uniquement pour s'assurer du bon fonctionnement de la generation de l'UML, ce qui est bien entendu très important. Pour lancer les tests unitaires, il suffit de lancer les differents fichiers dans un shell. Ils sont aussi executés sur GitLab, avec la technique du Developpement Continue.
+            Les fichiers qui sont testés sont :
+            <ul>
+                <li><a href="../../vscode_extension_PyUML/languages/java/object/Methodes.py" target="_blank">Methods.py</a>.</li>
+                <li><a href="../../vscode_extension_PyUML/languages/java/object/Params.py" target="_blank">Params.py</a>.</li>
+                <li><a href="../../vscode_extension_PyUML/languages/java/object/Attributes.py" target="_blank">Attributes.py</a>.</li>
+            </ul>
+            On peut donc visualiser en direct sur notre dépôt GitLab que la pipeline est passed ce qui signifie que les tests sont fonctionnels sans erreurs.
+
+        </p>
+        <h4>Tests terrains</h4>
+        <p>
+            Les Tests Terrains ont été executés sur beaucoup de projets Java de nos precedents projets de fac. On a ainsi comparé a un UML deja existant , en verifiant a chaque fois que les UMLs generés et ceux existants sont similaires.
+            Pour illustrer les tests terrains, nous avons créer un dossier Tests_Terrains disponible dans le dépôt qui montre deux générations d'UML différente sur un Projet en particulier (L2S4 Projet) :
+            <ul>
+                <li>'uml-manuel...' qui représente les UMLs que nous avons générer à la main pour le Projet de S4 l'année passée</li>
+                <li>'py_uml...' qui représente les UMLs auto générés par notre extension VSCode</li>
+            </ul>
+            <p>En plus de refaire l'UML automatiquement et directement en séléctionnant le dossier de chaque packages et du projet total dans l'IDE VSCode, 
+            nous avons la possibilité de gérer la disposition des classes comme nous l'avons souhaité.
+            <div class="image">
+                <img src="../img/test.gif" />
+            </div>
+            Une autre différence significative est remarqué au niveau de la génération du projet en entier :  En effet, celui de l'année passée étant statique et assez imposant, 
+            il est assez difficile de voir le contenu de l'image à cause d'une police trop petite et il est impossible de zoomer afin de mieux voir.
+            <div class="image">
+                <img src="../img/Tests_Terrains/uml-manuel_uml_total.png" />
+            </div>
+            </p>   
+            <p>
+            Or, concernant l'UML autogénéré par l'extension, l'image a été sauvegardé sous un format dynamique, ce qui fait qu'il est toujours possible de zoomer afin d'isoler des classes 
+            et la qualité s'ajuste automatiquement afin que les textes soit clairs et visibles.
+            <div class="image">
+                <img id="needZoom" src="../img/Tests_Terrains/py_uml_uml_total.png" style="zoom: 11%;"/>
+            </div>
+            Zoom in<button id="zoomI">+</button>
+            Zoom Out<button id="zoomO">-</button>
+            <script type="text/javascript">
+                let zoom = 11
+                function zoomIn(){
+                    zoom += 5
+                    document.getElementById("needZoom").style.zoom = zoom+"%"
+                }
+                function zoomOut(){
+                    zoom -= 5
+                    document.getElementById("needZoom").style.zoom = zoom+"%"
+                }
+                document.getElementById("zoomI").addEventListener("click",zoomIn)
+                document.getElementById("zoomO").addEventListener("click",zoomOut)
+                
+            </script>
+            </p>
+            <p>
+                Enfin, voici un exemple pour comparer les résultats sur un même package (game.tile) :
+                <ul>
+                    <li>Version Manuelle : <div class="image">
+                        <img src="../img/Tests_Terrains/uml-manuel_game.tile.png" />
+                    </div></li>
+                    <li>Version Extension Autogénérée : <div class="image">
+                        <img src="../img/Tests_Terrains/pyuml_game.tile.png" />
+                    </div></li>
+                    <!-- </li> -->
+                    <!-- <li></li> -->
+                </ul>
+            </p>
+    
+        </p>
+    </div>
+</body>
+
+</html>

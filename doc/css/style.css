@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    * {
+    font-family: "Quicksand";
+    }
+    
+    body {
+        background-color: #BDC3C7;
+    }
+    
+    #header>img {
+        border-radius: 53px;
+        background: rgba(39, 39, 39, 0.5);
+        transform: scale(0.75);
+    }
+    
+    #header {
+        min-height: 110px;
+        padding-left: 5%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        font-size: x-large;
+        width: 100%;
+        height: 15%;
+        background-color: #2C3E50;
+        color: rgb(164 241 161);
+        ;
+        display: flex;
+        justify-content: center;
+    }
+    
+    a {
+        padding: 10px;
+        color: rgb(9 55 121);
+        text-decoration: none;
+    }
+    
+    a:hover,
+    li:hover {
+        transform: scale(1.05)
+    }
+    
+    h2 {
+        color: #201f1f;
+        border-bottom: 1px solid grey;
+    }
+    
+    ul {
+        margin-top: 1%;
+    }
+    
+    #index {
+        border-right: 2px solid black;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: auto;
+        min-width: 10%;
+        height: 85%;
+        background-color: #a1a2a4;
+        color: rgb(164 241 161);
+        ;
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: flex-start;
+    }
+    .image{
+        overflow: auto;
+        max-width: 99%;
+        min-height: 500px;
+    }
+    #Contener {
+        margin-left: 31%;
+        padding: 20px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        
+        max-width: 80%;
+        width: auto;
+        height: 76%;
+        background-color: #a1a2a4;
+        color: rgb(27, 27, 27);
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: flex-start;
+        overflow: auto;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    
+    .items::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    
+    .items {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }

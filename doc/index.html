@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png">
+    <title>PyUML docs</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="./img/logo.png" />
+        <h1>PyUML documentation</h1>
+    </div>
+    <div id="index">
+        <h2>Index</h2>
+        <a href="./index.html">- Accueil</a>
+        <a href="./html/extention.html"> - Fonctionnement de L'extention VScode</a>
+        <a href="./html/js.html"> - La partie JavaScript</a>
+        <ul>
+            <li>
+                <a href="./html/js.html#JointJS">JointJS</a>
+            </li>
+            <li>
+                <a href="./html/js.html#Complement">Notre Complement</a>
+            </li>
+
+        </ul>
+        <a href="./html/python.html">- La partie Python</a>
+        <ul>
+            <li>
+                <a href="./html/python.html#global">Fonctionnement global</a>
+            </li>
+            <li>
+                <a href="./html/python.html#Java">Le Language Python</a>
+            </li>
+            <li>
+                <a href="./html/demo2.html">UML</a>
+            </li>
+        </ul>
+        <a href="./html/test.html">- Test</a>
+        <a href="./html/demo.html">- Demo</a>
+        <a href="./html/about.html">- A propos</a>
+    </div>
+    <div id="Contener">
+        <h1>PyUML Documentation</h1>
+        <p>Cette Documentation permet de comprendre le fonctionnement de notre extension PyUML pour L'IDE VScode. Cette idée d'utiliser VSCode plutôt que de creer notre propre IDE, nous est venu lorsque l'on a vu la quantité de temps qu'il fallait pour creer une IDE , meme rudimentaire, ainsi que la portabilité de notre extension dans le future</p>
+        <p>Grâce à cette Documentation vous retrouverez l'intégralité des parties qui forment l'extension ainsi que leur explication détaillée.
+            Sur votre gauche, le menu permet d'accéder à chacune des parties.
+        </p> 
+        <p>
+            Le but de ce projet est de créer une extension pour l'<a href="https://code.visualstudio.com/" target="_blank">IDE VScode</a>, qui pourra lire le code/fichier/dossier, et en
+        générer automatiquement le code UML. Pour l'affichage UML, nous utilisons L'<a href="https://www.jointjs.com/" target="_blank">API jointJS</a>. Cette API permet
+        un UML interactif, qui peut etre bougé, et manipulé pour le rendre lisible ou mettre en valeur un élément (cf le
+        GIF mis en pièce jointe). L'UML pourra être mis à jour à chaque modification du code, via un script python qui
+        surveillera le projet/dossier
+        </p>
+        <p>
+            On l'utilise afin de reconnaître certaines parties de code qui sont utilisées dans les langages que nous supportons.
+Par exemple, JAVA est un langage orienté objet qui contient des patterns précis et récurrents : des packages, des classes, des méthodes, des attributs.
+Si l'on prend une classe, nous allons chercher a recuperer sa portée (`public`,  et `abstract` qui est optionnel), son type (`class`, `interface` ou `enum`), le nom de la classe qui est décidé par l'utilisateur (il faut donc prévoir une répétition de caractères majuscule ou minuscule, avec des numéros ou même des underscores) et ses dépendances (`extends` ou `implements`) suivi du nom des dépendances si il y en a. Ces données seront décodées, retranscrites et réutilisées afin de générer l'UML.
+        </p>
+    </div>
+</body>
+
+</html>

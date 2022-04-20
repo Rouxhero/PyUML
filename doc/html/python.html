@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png">
+    <title>PyUML docs</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="../img/logo.png" />
+        <h1>PyUML documentation</h1>
+    </div>
+    <div id="index">
+        <h2>Index</h2>
+        <a href="../index.html">- Accueil</a>
+        <a href="./extention.html"> - Fonctionnement de L'extension VScode</a>
+        <a href="./js.html"> - La partie JavaScript</a>
+        <ul>
+            <li>
+                <a href="./js.html#JointJS">JointJS</a>
+            </li>
+            <li>
+                <a href="./js.html#Complement">Notre Complement</a>
+            </li>
+
+        </ul>
+        <a href="./python.html">- La partie Python</a>
+        <ul>
+            <li>
+                <a href="./python.html#global">Fonctionnement global</a>
+            </li>
+            <li>
+                <a href="./python.html#Java">Le Language Python</a>
+            </li>
+            <li>
+                <a href="./demo2.html">UML</a>
+            </li>
+        </ul>
+        <a href="./test.html">- Test</a>
+        <a href="./demo.html">- Demo</a>
+        <a href="./about.html">- A propos</a>
+    </div>
+    <div id="Contener">
+        <h1>Le Fonctionnement des Scripts Python</h1>
+        <p>Cette partie est dedié au code le plus important de notre projet.</p>
+        <p>Le fonctionnement python est divisé en deux parties, une partie dans le  <a href="../../vscode_extension_PyUML/src/main.py" target="_blank">[main.py]</a> et la suite dans le dossier <a href="../../vscode_extension_PyUML/languages/README.html" target="_blank">[languages]</a>.
+        <h4>Sommaire</h4>
+        <ul>
+            <li>main.py</li>
+            <li>languages</li>
+        </ul>
+        <h4 id="global">Main.py</h4>
+        <p>Ce script Python est le routeur qui fait le lien entre l'extension sur VScode et les différents langages pour traduire. Il récupère le type de requete demandé par l'utilisateur et le chemin du dossier/fichier. Ainsi on lance le script avec le type en argument 1 et le chemin en argument 2, et le script lancera la conversion avec le langage associé.
+        </p>
+        <p>Pour la version actuelle, le script lance automatiquement la traduction en java, mais grâce a la modularité du code, il est facile d'ajouter un autre langage, en respectant les regles pour le langage.</p>
+        <h4 id="Java">Langages</h4>
+        <p>Nous avons mis des readmes, dans les dossiers langages, pour permettre de creer d'autres langages</p>
+        <p>L'extension contient deja le langage Java. L'UML est disponible dans l'onglet UML</p>
+       <p>Le langage java a pour point d'entré le main.py, qui va analyser le code donné, ou le fichier/dossier. Il va ensuite , selon la fonction appelée, lancer l'analyse des fichiers et pour chaque fichier lu, creer des objets liés aux classes et aux packages. </p>
+       <p>Une fois toute l'analyse du(es) fichier(s) , le main lancera le passage des objets en UML , tout en respectant la syntaxe de JointJS</p>
+    </div>
+</body>
+
+</html>

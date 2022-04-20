@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Unified Modeling Language</title>
+
+    <link rel="stylesheet" type="text/css" href="http://eatngo.cf/joint/build/joint.css" />
+    <link rel='stylesheet' type="text/css" href='http://eatngo.cf/joint/css/umlcd.css' />
+</head>
+
+<body>
+    <div id="paper" style="background-color: rgb(48,56,65)"></div>
+
+    <script src="http://eatngo.cf/joint/node_modules/jquery/dist/jquery.js"></script>
+    <script src="http://eatngo.cf/joint/node_modules/lodash/lodash.js"></script>
+    <script src="http://eatngo.cf/joint/node_modules/backbone/backbone.js"></script>
+
+    <script src="http://eatngo.cf/joint/build/joint.js"></script>
+    <script src="../js/umlcd2.js"></script>
+    <script src="http://eatngo.cf/joint/complement/pattern.js"></script>
+    <script src="http://eatngo.cf/joint/complement/complement.js"></script>
+    <div id="menus">
+        <input type="button" name="open" value="🛠 " onclick="openToolBar()">
+    </div>
+    <div id="buttons">
+        <input type="button" name="close" value="✖" onclick="closeToolBar()">
+        <input type="button" name="Export svg" value="Export svg" onclick="exportUML()">
+        <input type="button" name="Remove Association" value="Remove Association" onclick="removeAsso()">
+        <input type="button" name="Layout" value="Layout" onclick="layout()">
+        <input type="button" name="Auto Layout (Experimental)" value="Auto Layout (Experimental)" onclick="autoLayout()">
+        <select name="classList" id="data">
+            <option value = "Select" selected>Select item to remove</option>
+         </select>
+        <input type="button" name="Remove" value="select class first" disabled="true" id="button" onclick="removeClass() ">
+    </div>
+    <button name="up" id="upArrow" onclick="window.scrollTo(0,0);"><img src="https://cdn.discordapp.com/attachments/932011985183313941/952670060814675998/pngegg.png"></i></button>
+
+</body>
+
+</html>

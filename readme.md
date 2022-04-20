@@ -1,48 +1,51 @@
-<p align="center">
-	<img src="https://see.fontimg.com/api/renderfont4/WyO0O/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMEYxQTdEIiwiYmdjIjoiIzAwMDAwMCIsInQiOjF9/UHlVTUw/magic-owl-personal-use.png" alt="Title">
-</p>
 
+## Goal of the extension
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/Rouxhero/Py_Uml/CI/main">
+---
 
+This extension can generate and preview the UML of a portion of code or a file or a directory
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Rouxhero/PyUML?style=flat-square)
-[![GitHub all releases](https://img.shields.io/github/downloads/Rouxhero/PyUML/total)](https://github.com/Rouxhero/PyUML/archive/refs/tags/V1.zip)
-# How to use !
+## Features
 
-WSD synthaxe
--
-```wsd
-<package1Name>{
+---
 
-	[abstract]<class1>{
-		[#|+|-] [static] [final] <Vartype> <Varname>
-		[#|+|-] [static] [final] <Funcname>(<argType> <argName> , <..>)[:<return>]
-	}
-	[abstract]<enum1>{
-		[#|+|-] [static] [final] <Vartype> <Varname>
-		[#|+|-] [static] [final] <Funcname>(<argType> <argName> , <..>)[:<return>]
-	}
-	[abstract]<interface>{
-		[#|+|-] [static] [final] <Vartype> <Varname>
-		[#|+|-] [static] [final] <Funcname>(<argType> <argName> , <..>)[:<return>]
-	}
+I) Generation of a portion of code with a file open in the vscode window.
 
-	<class1><|--<class2>
-	<class1>*..<class3>
-}
+Two steps:
 
-```
-Run
--
+- Selecting the portion of code you want to generate the UML 
 
-use `run.bat` or `./run.sh` to run UI<br>
-/!\ if you have install python3 in windows path with the name `python3`, you needs to change run.bat with python3
-> Main while check update and downloads New file if needs !
+- Right-click and select `Code To UML: Code to UML` : 
 
-## TODO 
-- [x] Corriger Extends
-- [X] Problemen Extends/Implement name -> .* name.*
-- [x] corriger Abstract FUnc
-- [ ] corriger open GUI linux : /usr/bin/thunar ~
-- [x] import *****
-- [ ] Create UML
-- [ ] Load UML
+When finished, the UML will automatically open to the side.
+
+II) Generation of all the code in a file open in the vscode window.
+
+One step:
+
+- Right-click and select `Code To UML: File to UML` : 
+
+When finished, the UML will automatically open to the side.
+
+III) Generation of a java file in the file explorer in the vscode window.
+
+One step:
+
+- Right-click on the file you want to generate the UML in the file explorer and select `Code To UML: Java File to UML` : 
+
+When finished, the UML will automatically open to the side.
+
+IV) Generation of a directory in the file explorer in the vscode window.
+
+One step:
+
+- Right-click on the directory you want to generate the UML in the file explorer and select `Code To UML: Folder to UML` : 
+
+When finished, the UML will automatically open to the side.
+
+## Release Notes
+---
+### 1.0.0
+Initial release of PyUml with the generation of java files or java files directory.
+
+**Enjoy!**

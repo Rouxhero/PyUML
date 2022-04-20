@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../img/logo.png">
+    <title>PyUML docs</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+    <div id="header">
+        <img src="../img/logo.png" />
+        <h1>PyUML documentation</h1>
+    </div>
+    <div id="index">
+
+        <h2>Index</h2>
+        <a href="../index.html">- Home</a>
+        <a href="./extention.html"> - Fonctionnement de L'extension VScode</a>
+        <a href="./js.html"> - La partie JavaScript</a>
+        <ul>
+            <li>
+                <a href="./js.html#JointJS">JointJS</a>
+            </li>
+            <li>
+                <a href="./js.html#Complement">Notre Complement</a>
+            </li>
+            
+
+        </ul>
+        <a href="./python.html">- La partie Python</a>
+        <ul>
+            <li>
+                <a href="./python.html#global">Fonctionnement global</a>
+            </li>
+            <li>
+                <a href="./python.html#Java">Le Langage Python</a>
+            </li>
+            <li>
+                <a href="./demo2.html">UML</a>
+            </li>
+        </ul>
+        <a href="./test.html">- Test</a>
+        <a href="./demo.html">- Demo</a>
+        <a href="./about.html">- A propos</a>
+    </div>
+    <div id="Contener">
+        <h1>Le Fonctionnement des Scripts JS</h1>
+        <p>Il y a plusieurs parties dans notre utilisation du Javascript, car pour les affichages des UMLs, nous utilisons l'API Joint Js, qui est codé en Javascript. Nous avons donc une partie du code qui est généré selon la syntaxe permettant de faire
+            des UMLs avec cette API, et d'un autre côté, nous avons du complementer cette API.</p>
+        <p>En effet, il manquait pas mal de fonctionnalitées, tel que supprimer les associations, Mettre en forme</p>
+        <h4>Sommaire</h4>
+        <ul>
+            <li>JoinJS</li>
+            <li>Complement</li>
+        </ul>
+        <h4 id="JointJS">JointJS</h4>
+        <a href="https://www.jointjs.com/"><img src="../img/joint.png" style="width: 50%;" /></a>
+        <p>JointJS est une API de modélisation en Javascript, c'est la version open source de Rapid, une version payante mais beaucoup plus complète que Joint js.<br/> Nous avons décidé de travailler avec cette API, plutôt qu'avec le logiciel/site Plant
+            uml. En effet PlantUML génère une image en fonction du code donné, et donc l'UML obtenu est static et ne peut pas etre modifié. Grâce à Joint Js, l'affichage devient interactif et cela permet souvent de gagner en lisibilité sur le code</p>
+        <p>
+            <p> Pour une question de portabilité et aussi pour une question de stockage, nous avons stocké tous les scripts de JointJS sur un VPS distant, et nous avons donc plus qu'un fichier JS a générer en local</p>
+            Le choix d'afficher certaines relations et non d'autres, notamment les agrégations, est un choix stratégique car pour détecter et représenter tous les agrégations/compositions d'un code, il faut un code détecteur et un analyseur syntaxique beaucoup plus
+            développer . Nous avons donc choisi de laisser de coté cette parti pour uniquement afficher les relations d'héritages et celle d'association (lorsqu'une classe utilise une autre ... ). Mais le code a été fait en POO, et de façon modulaire.
+            Ainsi, plus tard nous pourrions ajouter ces parties manquantes au code. Le problème principal de JointJS est que, c'est une API assez pauvre en matière de choix/possibilité. Nous avons donc dû coder des compléments.
+        </p>
+        <h4 id="Complement">Complement</h4>
+        <p>
+            Nous avons plusieurs compléments, stockés dans deux fichiers et stockés sur le VPS :
+            <ul>
+                <li> <a href="http://eatngo.cf/joint/complement/complement.js" target="_blank">[complement.js]</a> </li>
+                <li> <a href="http://eatngo.cf/joint/complement/pattern.js" target="_blank">[pattern.js]</a> </li>
+            </ul>
+        </p>
+        <p>
+            <b>complement.js</b> est un script qui regroupe toutes les fonctions qui permet de nettoyer l'UML, de gérer la boîte à outils et de mettre en place les layouts.
+
+        </p>
+        <p>
+            <b>pattern.js </b>est un script JS contenant une classe pattern et qui permet de créer un layout évolué. Cette classe est conçue pour être mise à jour et ainsi donner un layout plus performant
+        </p>
+        <p>
+            Les scripts Javascripts sont assez rudimentaires car ce n'était pas la partie la plus importante du code, celle-ci se trouvant sur les scripts Python
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+{
+    "name": "pyuml",
+    "displayName": "py-uml",
+    "description": "Extension PyUml permettant la convertion et l'affichage de façon dynamique d'un code Java en UML",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "icon": "https://discord.com/channels/@me/491259352746033152/958626618232954890",
+    "categories": [
+        "UML"
+    ],
+    "activationEvents": [
+        "onCommand:pyuml.codeToUml",
+        "onCommand:pyuml.fileToUml",
+        "onCommand:pyuml.folderToUml",
+        "onCommand:pyuml.fileCodetouml",
+        "onCommand:pyuml.javaFileToUml",
+        "onCommand:pyuml.openPreviewToTheSide",
+        "onCommand:pyuml.openFullPreview"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "commands": [{
+                "command": "pyuml.codeToUml",
+                "title": "Code To UML: Code to UML"
+            },
+            {
+                "command": "pyuml.fileToUml",
+                "title": "Code To UML: File to UML"
+            },
+            {
+                "command": "pyuml.fileCodetouml",
+                "title": "Code To UML: All File Code to UML"
+            },
+            {
+                "command": "pyuml.folderToUml",
+                "title": "Code To UML: Folder to UML"
+            },
+            {
+                "command": "pyuml.javaFileToUml",
+                "title": "Code To UML: Java File to UML"
+            },
+            {
+                "command": "pyuml.openPreviewToTheSide",
+                "title": "Code To UML: Open the UML preview to the side"
+            },
+            {
+                "command": "pyuml.openFullPreview",
+                "title": "Code To UML: Open the full UML preview"
+            }
+        ],
+        "menus": {
+            "commandPalette": [{
+                    "when": "resourceLangId == java",
+                    "command": "pyuml.fileToUml"
+                },
+                {
+                    "when": "",
+                    "command": "pyuml.openPreviewToTheSide"
+                },
+                {
+                    "when": "",
+                    "command": "pyuml.openFullPreview"
+                }
+            ],
+            "editor/context": [{
+                    "when": "resourceLangId == java && editorHasSelection == true",
+                    "command": "pyuml.codeToUml"
+                },
+                {
+                    "when": "resourceLangId == java",
+                    "command": "pyuml.fileCodetouml"
+                }
+            ],
+            "explorer/context": [{
+                    "command": "pyuml.folderToUml",
+                    "when": "filesExplorerFocus == true && explorerResourceIsFolder "
+                },
+                {
+                    "command": "pyuml.javaFileToUml",
+                    "when": "resourceScheme == file && resourceExtname == .java"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "prepyuml": "npm run lint",
+        "pyuml": "node ./pyuml/runpyuml.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.0",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.65.0",
+        "@vscode/pyuml-electron": "^2.1.2",
+        "eslint": "^8.9.0",
+        "glob": "^7.2.0",
+        "mocha": "^9.2.1",
+        "typescript": "^4.5.5"
+    },
+    "dependencies": {
+        "express": "^4.17.3"
+    }
+}
